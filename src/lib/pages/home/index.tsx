@@ -1,9 +1,9 @@
-import { SomeText } from './components/some-text';
+import Hero from '@/lib/pages/home/components/hero/index';
 
 const Home = () => {
   return (
-    <div className="flex min-h-[100vh] w-full flex-col items-center justify-center gap-8 text-center">
-      <SomeText />
+    <div>
+      <Hero />
     </div>
   );
 };
