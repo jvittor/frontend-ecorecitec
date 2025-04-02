@@ -26,35 +26,37 @@ const MobileNavbarComponent: React.FC = () => {
             height={50}
             priority
           />
-          <div className="hidden lg:block">
-            <DesktopNavbar items={items} />
-            {isLoading ? (
-              <div className="flex items-center justify-center">
-                <CircularProgress color="success" />
-              </div>
-            ) : !user ? (
-              <ButtonLogin
-                label="Entrar"
-                onClick={() => console.log('Login clicked')}
-                bgColor="bg-[#CFFF5B]"
-                hoverColor="hover:bg-[#A3C948]"
+          <DesktopNavbar items={items} />
+          {isLoading ? (
+            <div className="flex items-center justify-center">
+              <CircularProgress color="success" />
+            </div>
+          ) : !user ? (
+            <ButtonLogin
+              label="Entrar"
+              onClick={() => console.log('Login clicked')}
+              bgColor="bg-[#CFFF5B]"
+              hoverColor="hover:bg-[#A3C948]"
+            />
+          ) : (
+            <>
+              <Avatar
+                alt={user.username}
+                sx={{ width: 50, height: 50 }}
+                src={user?.imageBase64 || './assets/johnbonham.webp'}
               />
-            ) : (
-              <div className="grid-cols-2 gap-3">
-                <Avatar
-                  alt={user.username}
-                  sx={{ width: 100, height: 100 }}
-                  src={user?.imageBase64 || './assets/johnbonham.webp'}
-                />
-                <ButtonLogin
-                  label="Meus dados"
-                  onClick={() => console.log('Login clicked')}
-                  bgColor="bg-[#CFFF5B]"
-                  hoverColor="hover:bg-[#A3C948]"
-                />
+              <div className="px-2">
+                <a href="/user">
+                  <ButtonLogin
+                    label="Dados"
+                    onClick={() => console.log('Login clicked')}
+                    bgColor="bg-[#CFFF5B]"
+                    hoverColor="hover:bg-[#A3C948]"
+                  />
+                </a>
               </div>
-            )}
-          </div>
+            </>
+          )}
         </div>
       </section>
     </header>

@@ -6,6 +6,7 @@ import { Footer } from './components/footer';
 import { Header } from './components/header';
 import { usePathname } from 'next/navigation';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { ToastContainer } from 'react-toastify';
 
 type LayoutProps = {
   children: ReactNode;
@@ -22,6 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
     <GoogleOAuthProvider clientId={GoogleID}>
       <div className="flex min-h-screen flex-col">
         {!hideHeader && <Header />}
+        <ToastContainer />
         <main className="">{children}</main>
         <Footer />
       </div>
