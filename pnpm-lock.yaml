@@ -23,6 +23,9 @@ importers:
       '@mui/material':
         specifier: ^7.0.1
         version: 7.0.1(@emotion/react@11.14.0(@types/react@19.0.7)(react@19.0.0))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@19.0.7)(react@19.0.0))(@types/react@19.0.7)(react@19.0.0))(@types/react@19.0.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@react-oauth/google':
+        specifier: ^0.12.1
+        version: 0.12.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1527,6 +1530,12 @@ packages:
 
   '@popperjs/core@2.11.8':
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
+  '@react-oauth/google@0.12.1':
+    resolution: {integrity: sha512-qagsy22t+7UdkYAiT5ZhfM4StXi9PPNvw0zuwNmabrWyMKddczMtBIOARflbaIj+wHiQjnMAsZmzsUYuXeyoSg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -7957,6 +7966,11 @@ snapshots:
   '@nolyfill/is-core-module@1.0.39': {}
 
   '@popperjs/core@2.11.8': {}
+
+  '@react-oauth/google@0.12.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   '@rtsao/scc@1.1.0': {}
 
