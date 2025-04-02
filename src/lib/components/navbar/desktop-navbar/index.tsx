@@ -1,13 +1,18 @@
 import React from 'react';
 import ButtonLogin from '@/lib/components/button/button';
 import DesktopNavbar from './desktop-navbar';
+import { useUser } from '@/features/use-user';
+import { CircularProgress, Avatar } from '@mui/material';
 import Image from 'next/image';
 
 const MobileNavbarComponent: React.FC = () => {
+  const { user, isLoading } = useUser();
   const items = [
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Maior Desafio', href: '#maior-desafio' },
-    { label: 'Princípios', href: '#principios' },
+    { label: 'Início', href: '#hero' },
+    { label: 'Sobre', href: '#about' },
+    { label: 'Gestão de Resíduos', href: '#waste-management' },
+    { label: 'Sistema Circular', href: '#circle-system' },
+    { label: 'Maior Desafio', href: '#challenge' },
   ];
   return (
     <header className="bg-base-100/80 sticky top-0 z-10 hidden w-full rounded-b-3xl bg-[#EEEBD8] backdrop-blur-md lg:block">
@@ -21,13 +26,35 @@ const MobileNavbarComponent: React.FC = () => {
             height={50}
             priority
           />
-          <DesktopNavbar items={items} />
-          <ButtonLogin
-            label="Entrar"
-            onClick={() => console.log('Login clicked')}
-            bgColor="bg-[#CFFF5B]"
-            hoverColor="hover:bg-[#A3C948]"
-          />
+          <div className="hidden lg:block">
+            <DesktopNavbar items={items} />
+            {isLoading ? (
+              <div className="flex items-center justify-center">
+                <CircularProgress color="success" />
+              </div>
+            ) : !user ? (
+              <ButtonLogin
+                label="Entrar"
+                onClick={() => console.log('Login clicked')}
+                bgColor="bg-[#CFFF5B]"
+                hoverColor="hover:bg-[#A3C948]"
+              />
+            ) : (
+              <div className="grid-cols-2 gap-3">
+                <Avatar
+                  alt={user.username}
+                  sx={{ width: 100, height: 100 }}
+                  src={user?.imageBase64 || './assets/johnbonham.webp'}
+                />
+                <ButtonLogin
+                  label="Meus dados"
+                  onClick={() => console.log('Login clicked')}
+                  bgColor="bg-[#CFFF5B]"
+                  hoverColor="hover:bg-[#A3C948]"
+                />
+              </div>
+            )}
+          </div>
         </div>
       </section>
     </header>

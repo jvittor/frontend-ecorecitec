@@ -6,6 +6,7 @@ import Image from 'next/image';
 const CircleSystem: React.FC = () => {
   return (
     <section
+      id="circle-system"
       style={{ fontFamily: "'IBM Plex Mono', monospace" }}
       className="hero w-full max-w-[900px] flex-1 py-16"
     >

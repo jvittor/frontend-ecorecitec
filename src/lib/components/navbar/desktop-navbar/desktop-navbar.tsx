@@ -13,7 +13,11 @@ const ItemsNavbar: React.FC<ItemsNavbarProps> = ({ items }) => {
       >
         {items.map((item, index) => (
           <li key={index} className={navbarStyles.li}>
-            <a href={item.href} className={navbarStyles.a}>
+            <a
+              href={item.href}
+              className={navbarStyles.a}
+              style={{ cursor: 'pointer' }}
+            >
               {item.label}
             </a>
           </li>

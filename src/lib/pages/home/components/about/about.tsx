@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
-    <section className="hero w-full max-w-[900px] py-16">
+    <section id="about" className="w-full max-w-[900px] py-16">
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
         <div className="flex hidden justify-center lg:block">
           <Image

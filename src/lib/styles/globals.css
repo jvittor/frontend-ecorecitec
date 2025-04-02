@@ -29,14 +29,16 @@
 }
 
 @layer base {
-  /* Define a fonte padrão para todo o site */
   body {
     font-family: 'IBM Plex Mono', monospace;
   }
 
-  /* Opcional: aplique a fonte a todos os elementos */
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
-    font-family: inherit; /* Herda a fonte do body */
+    font-family: inherit;
   }
 }
 

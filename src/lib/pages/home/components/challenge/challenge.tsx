@@ -3,9 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 
-const About: React.FC = () => {
+const Challennge: React.FC = () => {
   return (
-    <section className="hero w-full max-w-[900px] py-16">
+    <section id="challenge" className="hero w-full max-w-[900px] py-16">
       <div className="grid grid-cols-1 items-center gap-8">
         <div
           style={{ fontFamily: "'IBM Plex Mono', monospace" }}
@@ -81,4 +81,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default Challennge;

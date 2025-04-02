@@ -6,6 +6,7 @@ import Timeline from './timeline';
 const WasteManagement: React.FC = () => {
   return (
     <section
+      id="waste-management"
       style={{ fontFamily: "'IBM Plex Mono', monospace" }}
       className="hero w-full max-w-[900px] flex-1 py-16"
     >

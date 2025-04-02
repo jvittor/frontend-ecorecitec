@@ -16,6 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
+import Button from '@/lib/components/button/button';
 
 const drawerWidth = 240;
 
@@ -45,7 +46,7 @@ const MobileNav: React.FC<ItemsNavbarProps> = ({ items }) => {
       <nav>
         {items.map((item) => (
           <a key={item.label} href={item.href}>
-            <a className="block p-4 font-bold text-black no-underline hover:underline">
+            <a className="block p-4 text-left font-bold text-black no-underline hover:underline">
               {item.label}
             </a>
           </a>
@@ -57,14 +58,12 @@ const MobileNav: React.FC<ItemsNavbarProps> = ({ items }) => {
       ) : !user ? (
         <div className="text-black-300 mt-5 grid w-full gap-5 p-4 font-bold">
           <a href="/login">
-            <div className="bg-orange flex items-center justify-center rounded-lg border-2 p-3 px-5 py-2">
-              <a>Entrar</a>
-            </div>
-          </a>
-          <a href="/register">
-            <div className="flex items-center justify-center rounded-lg border-2 p-3 px-5 py-2">
-              <a>Cadastrar</a>
-            </div>
+            <Button
+              label="Entrar"
+              onClick={() => console.log('Login clicked')}
+              bgColor="bg-[#CFFF5B]"
+              hoverColor="hover:bg-[#A3C948]"
+            />
           </a>
         </div>
       ) : (
@@ -77,9 +76,12 @@ const MobileNav: React.FC<ItemsNavbarProps> = ({ items }) => {
           <p className="mt-2 font-bold">{user.username}</p>
           <div className="text-black-300 mt-5 grid w-full gap-5 p-4 font-bold">
             <a href="/user">
-              <div className="bg-orange flex items-center justify-center rounded-lg border-2 p-3 px-5 py-2">
-                <a>Meus Impactos</a>
-              </div>
+              <Button
+                label="Meus dados"
+                onClick={() => console.log('Login clicked')}
+                bgColor="bg-[#CFFF5B]"
+                hoverColor="hover:bg-[#A3C948]"
+              />
             </a>
             <a href="#" onClick={logout}>
               <div className="flex items-center justify-center rounded-lg border-2 p-3 px-5 py-2">
