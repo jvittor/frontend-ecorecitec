@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { ItemsNavbarProps } from '@/core/interfaces/navbar-items.props';
-import { navbarStyles } from './items-navbar.styles';
+import { navbarStyles } from './desktop-navbar.styles';
 
 const ItemsNavbar: React.FC<ItemsNavbarProps> = ({ items }) => {
   return (
