@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Hero: React.FC = () => {
+const About: React.FC = () => {
   return (
     <section className="hero w-full max-w-[900px] py-16">
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
@@ -33,4 +33,4 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default About;
