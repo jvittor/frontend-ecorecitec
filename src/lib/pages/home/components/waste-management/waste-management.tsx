@@ -10,7 +10,7 @@ const WasteManagement: React.FC = () => {
       className="hero w-full max-w-[900px] flex-1 py-16"
     >
       <div className="grid gap-15">
-        <h1 className="w-full text-center text-3xl font-bold lg:text-left">
+        <h1 className="w-full p-2 text-center text-3xl font-bold lg:p-0 lg:text-left">
           À medida que as cidades cresciam, surgia a necessidade de serviços
           públicos essenciais, como saneamento, moradia, educação, saúde,
           emprego e renda.

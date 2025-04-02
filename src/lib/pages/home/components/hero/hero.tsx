@@ -7,7 +7,7 @@ import Image from 'next/image';
 const Hero: React.FC = () => {
   return (
     <section className="hero w-full max-w-[900px] py-16">
-      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+      <div className="mt-10 grid grid-cols-1 items-center gap-8 lg:mt-0 lg:grid-cols-2">
         <div
           style={{ fontFamily: "'IBM Plex Mono', monospace" }}
           className="container mx-auto grid gap-4 px-4 text-center text-[#EEEBD8]"
