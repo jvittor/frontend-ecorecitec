@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 @plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
@@ -25,6 +25,18 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  /* Define a fonte padrão para todo o site */
+  body {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* Opcional: aplique a fonte a todos os elementos */
+  * {
+    font-family: inherit; /* Herda a fonte do body */
   }
 }
 
