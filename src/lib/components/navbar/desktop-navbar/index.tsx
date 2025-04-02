@@ -32,12 +32,14 @@ const MobileNavbarComponent: React.FC = () => {
               <CircularProgress color="success" />
             </div>
           ) : !user ? (
-            <ButtonLogin
-              label="Entrar"
-              onClick={() => console.log('Login clicked')}
-              bgColor="bg-[#CFFF5B]"
-              hoverColor="hover:bg-[#A3C948]"
-            />
+            <a href="/login">
+              <ButtonLogin
+                label="Entrar"
+                onClick={() => console.log('Login clicked')}
+                bgColor="bg-[#CFFF5B]"
+                hoverColor="hover:bg-[#A3C948]"
+              />
+            </a>
           ) : (
             <>
               <Avatar

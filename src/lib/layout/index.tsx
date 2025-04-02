@@ -16,8 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
   const pathname = usePathname();
   const GoogleID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || '';
 
-  const hideHeader =
-    pathname === '/login' || pathname === '/register' || pathname === '/user';
+  const hideHeader = pathname === '/login' || pathname === '/register';
 
   return (
     <GoogleOAuthProvider clientId={GoogleID}>
