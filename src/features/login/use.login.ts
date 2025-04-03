@@ -1,6 +1,7 @@
 import { AuthRepositoryImpl as AuthRepository } from '@/core/repositories/auth.repository';
 import { User } from '@/core/entities/user';
 import { openDB } from '@/lib/services/user-storage';
+import Cookies from 'js-cookie';
 
 export class LoginUseCase {
   constructor(private authRepository: AuthRepository) {}
@@ -30,6 +31,8 @@ export class LoginUseCase {
         reject(new Error('Erro ao salvar dados do usuário no IndexedDB.'));
       };
     });
+
+    Cookies.set('token', token, { expires: 7 });
 
     return token;
   }
