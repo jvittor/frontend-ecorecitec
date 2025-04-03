@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import LoginForm from './login-form';
+import RegisterForm from './register-form';
 import Image from 'next/image';
 
 const Hero: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const handleLoad = () => setIsLoading(false);
 
@@ -16,10 +17,11 @@ const Hero: React.FC = () => {
       return () => window.removeEventListener('load', handleLoad);
     }
   }, []);
+
   return (
     <section
       id="hero"
-      className="hero h-[600px] w-full max-w-[600px] rounded-2xl bg-white py-16"
+      className="hero flex h-[700px] w-full max-w-[600px] items-center justify-center rounded-2xl bg-white py-16"
     >
       {isLoading ? (
         <div className="flex flex-col items-center justify-center">
@@ -43,10 +45,10 @@ const Hero: React.FC = () => {
               />
             </div>
             <h1 className="w-full text-center text-3xl font-bold">
-              Faça seu Login
+              Faça seu registro
             </h1>
             <div className="w-full">
-              <LoginForm />
+              <RegisterForm />
             </div>
           </div>
         </div>

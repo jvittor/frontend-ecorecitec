@@ -3,8 +3,26 @@ import { AuthRepository } from '@/core/interfaces/auth.props';
 import { User } from '@/core/entities/user';
 
 export class AuthRepositoryImpl implements AuthRepository {
+  async register(user: User): Promise<string> {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/register`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user),
+        credentials: 'include',
+      }
+    );
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Erro ao registrar o usuário.');
+    }
+
+    const { message } = await response.json();
+    return message;
+  }
   async login(user: User): Promise<{ token: string; profile: any }> {
-    // Realiza o login e obtém o token
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/login`,
       {
@@ -37,7 +55,6 @@ export class AuthRepositoryImpl implements AuthRepository {
 
     const profile = await profileResponse.json();
 
-    // Retorna os dados necessários para o caso de uso
     return { token, profile };
   }
 }

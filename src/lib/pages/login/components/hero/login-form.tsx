@@ -6,7 +6,7 @@ import { TextField, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import styled from '@emotion/styled';
 import { LoginUseCase } from '@/features/login/use.login';
-import { AuthRepositoryImpl } from '@/core/repositories/login.repository';
+import { AuthRepositoryImpl } from '@/core/repositories/auth.repository';
 import Button from '@/lib/components/button/button';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
@@ -106,6 +106,9 @@ const LoginForm: React.FC = () => {
               hoverColor="hover:bg-[#A3C948]"
             />
           </button>
+        </div>
+        <div className="flex w-full items-center justify-center underline">
+          <a href="/register">caso ainda não tenha registro, clique aqui.</a>
         </div>
       </form>
       <div>

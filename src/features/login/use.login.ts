@@ -1,4 +1,4 @@
-import { AuthRepositoryImpl as AuthRepository } from '@/core/repositories/login.repository';
+import { AuthRepositoryImpl as AuthRepository } from '@/core/repositories/auth.repository';
 import { User } from '@/core/entities/user';
 import Cookie from 'js-cookie';
 import { openDB } from '@/lib/services/user-storage';
@@ -13,7 +13,6 @@ export class LoginUseCase {
 
     const { token, profile } = await this.authRepository.login(user);
 
-    // Salva os dados no IndexedDB
     const userDataWithLoginDate = {
       ...profile,
       loginDate: new Date().toISOString(),
@@ -33,10 +32,8 @@ export class LoginUseCase {
       };
     });
 
-    // Configura os cookies
-    Cookie.set('token', token, { expires: 7 });
+    Cookie.set('TOKEN_KEY', token, { expires: 7 });
 
-    // Retorna o token
     return token;
   }
 
