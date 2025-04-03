@@ -100,7 +100,7 @@ export const logout = async (): Promise<void> => {
     const objectStore = transaction.objectStore('user_data');
 
     objectStore.clear();
-    Cookie.remove('authToken');
+    Cookie.remove('token');
 
     transaction.oncomplete = () => {
       console.log('Todos os dados do usuário foram removidos com sucesso!');

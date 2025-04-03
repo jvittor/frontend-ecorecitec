@@ -1,9 +1,7 @@
-'use client';
-
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
-export const TOKEN_KEY = 'authToken';
+export const TOKEN_KEY = 'token';
 
 export async function middleware(request: NextRequest) {
   const token = request.cookies.get(TOKEN_KEY);

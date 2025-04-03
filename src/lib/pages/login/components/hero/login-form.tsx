@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
@@ -39,15 +40,18 @@ const LoginForm: React.FC = () => {
     setSuccessMessage('');
 
     try {
+      const token = await loginUseCase.execute(loginData);
       toast.success('Login realizado com sucesso!', {
         position: 'top-right',
         autoClose: 3000,
       });
-      setTimeout(() => {
-        router.push('/');
-      }, 3000);
+      router.push('/');
     } catch (error: any) {
-      setErrorMessage(error.message);
+      setErrorMessage(error.message || 'Erro ao realizar login.');
+      toast.error(error.message || 'Erro ao realizar login.', {
+        position: 'top-right',
+        autoClose: 3000,
+      });
     }
   };
 

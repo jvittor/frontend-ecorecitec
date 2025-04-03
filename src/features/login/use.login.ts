@@ -1,6 +1,5 @@
 import { AuthRepositoryImpl as AuthRepository } from '@/core/repositories/auth.repository';
 import { User } from '@/core/entities/user';
-import Cookie from 'js-cookie';
 import { openDB } from '@/lib/services/user-storage';
 
 export class LoginUseCase {
@@ -31,8 +30,6 @@ export class LoginUseCase {
         reject(new Error('Erro ao salvar dados do usuário no IndexedDB.'));
       };
     });
-
-    Cookie.set('TOKEN_KEY', token, { expires: 7 });
 
     return token;
   }

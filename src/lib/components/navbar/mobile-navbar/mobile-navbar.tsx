@@ -22,7 +22,7 @@ const drawerWidth = 240;
 
 const MobileNav: React.FC<ItemsNavbarProps> = ({ items }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { user, isLoading, logout } = useUser();
+  const { user, isLoading } = useUser();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -67,7 +67,7 @@ const MobileNav: React.FC<ItemsNavbarProps> = ({ items }) => {
           </a>
         </div>
       ) : (
-        <div className="p-4">
+        <div className="flex flex-col items-center justify-center p-4">
           <Avatar
             alt={user.username}
             sx={{ width: 100, height: 100 }}
@@ -77,16 +77,11 @@ const MobileNav: React.FC<ItemsNavbarProps> = ({ items }) => {
           <div className="text-black-300 mt-5 grid w-full gap-5 p-4 font-bold">
             <a href="/user">
               <Button
-                label="Meus dados"
+                label="Dados"
                 onClick={() => console.log('Login clicked')}
                 bgColor="bg-[#CFFF5B]"
                 hoverColor="hover:bg-[#A3C948]"
               />
-            </a>
-            <a href="#" onClick={logout}>
-              <div className="flex items-center justify-center rounded-lg border-2 p-3 px-5 py-2">
-                <a>Sair</a>
-              </div>
             </a>
           </div>
         </div>
